@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content%}
+
+<h3 class="h3 mb-4">Summary of Responses</h3>
+<div class="row gap-3 justify-content-center ">
+    <div class="col-lg-5 col-12 bg-white text-dark rounded-3 shadow-sm m-2">
+        <div class="p-2">
+            <h4 class="h4 pb-2 border-bottom border-light border-2">Response 1</h4>
+        </div>
+        <div class="p-2">{{response1_sum}}</div>
+        <div class="p-2">
+            <small class="fw-bold d-block">Number of characters: {{response1_char}}</small>
+            <small class="fw-bold d-block">Number of words: {{response1_word}}</small>
+            <small class="fw-bold d-block">Number of sentences: {{response1_sen}}</small>
+            <small class="fw-bold d-block">Number of emojis: {{response1_emoji}}</small>
+        </div>
+    </div>
+
+    <div class="col-lg-5 col-12 bg-white text-dark rounded-3 shadow-sm m-2">
+        <div class="p-2">
+            <h4 class="h4 pb-2 border-bottom border-light border-2">Response 2</h4>
+        </div>
+        <div class="p-2">{{response2_sum}}</div>
+        <div class="p-2">
+            <small class="fw-bold d-block">Number of characters: {{response2_char}}</small>
+            <small class="fw-bold d-block">Number of words: {{response2_word}}</small>
+            <small class="fw-bold d-block">Number of sentences: {{response2_sen}}</small>
+            <small class="fw-bold d-block">Number of emojis: {{response2_emoji}}</small>
+        </div>
+    </div>
+</div>
+
+<h3 class="h3 mt-5 mb-3">Compare Another Responses</h3>
+
+<form action="/summary" method="post">
+    <div class="row">
+
+        <div class="col-lg-6 col-12 mb-3">
+            <label class="form-label" for="response1">Enter the first response</label>
+            <textarea class="form-control" id="response1" name="response1" rows="5"
+                placeholder="{{response1}}"></textarea>
+        </div>
+
+        <div class="col-lg-6 col-12 mb-3">
+            <label class="form-label" for="response2">Enter the second response</label>
+            <textarea id="response2" name="response2" class="form-control" rows="5"
+                placeholder="{{response2}}"></textarea>
+        </div>
+
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Summarize</button>
+    </div>
+</form>
+
+{% endblock content%}

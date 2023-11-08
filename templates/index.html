@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content%}
+<form action="/summary" method="post">
+    <div class="mb-3">
+        <label class="form-label" for="response1">Enter the first response</label>
+        <textarea class="form-control" id="response1" name="response1" rows="10"
+            placeholder="Start typing..."></textarea>
+    </div>
+
+    <div class="mb-3 d-inline">
+        <label class="form-label" for="response2">Enter the second response</label>
+        <textarea id="response2" name="response2" class="form-control" rows="10"
+            placeholder="Start typing..."></textarea>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary my-3" type="submit">Get Summary</button>
+    </div>
+</form>
+{% endblock content%}
